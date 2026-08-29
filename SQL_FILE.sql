@@ -20,9 +20,7 @@ CREATE TABLE consumers (
     Budget VARCHAR(20)
 );
 
--- ========================================================
--- TABLE 2: RESTAURANTS
--- ========================================================
+
 CREATE TABLE restaurants (
     Restaurant_ID INT PRIMARY KEY,
     Name VARCHAR(255),
@@ -40,9 +38,7 @@ CREATE TABLE restaurants (
     Parking VARCHAR(50)
 );
 
--- ========================================================
--- TABLE 3: CONSUMER_PREFERENCES
--- ========================================================
+
 CREATE TABLE consumer_preferences (
     Consumer_ID VARCHAR(10),
     Preferred_Cuisine VARCHAR(255),
@@ -51,9 +47,7 @@ CREATE TABLE consumer_preferences (
     INDEX idx_cuisine (Preferred_Cuisine)
 );
 
--- ========================================================
--- TABLE 4: RESTAURANT_CUISINES
--- ========================================================
+
 CREATE TABLE restaurant_cuisines (
     Restaurant_ID INT,
     Cuisine VARCHAR(255),
@@ -62,9 +56,6 @@ CREATE TABLE restaurant_cuisines (
     INDEX idx_cuisine (Cuisine)
 );
 
--- ========================================================
--- TABLE 5: RATINGS
--- ========================================================
 CREATE TABLE ratings (
     Consumer_ID VARCHAR(10),
     Restaurant_ID INT,
@@ -78,9 +69,7 @@ CREATE TABLE ratings (
     INDEX idx_overall_rating (Overall_Rating)
 );
 
--- ========================================================
--- VERIFICATION
--- ========================================================
+
 SHOW TABLES;
 
 select * from consumers;
@@ -125,7 +114,6 @@ where Overall_Rating = 2;
 
 -- ======================================================
 -- Questions JOINs with Subqueries
--- ======================================================
 
 /* 1. List the names and cities of all restaurants that have an Overall_Rating of 2 (Highly
 Satisfactory) from at least one consumer. */
